@@ -13,8 +13,8 @@ namespace SyncFusionExperiment.Pages
 			// I don't want to be specifying the series in code-behind because I want the series to be in XAML, also at this point (in constructor) the bindings are not set
 			// and this will cause problems for me.
 
-			//((SfChart)RangeNavigator.Content).Series.Clear();
-			//((SfChart)RangeNavigator.Content).Series.Add(new SplineAreaSeries() { ItemsSource = series.ItemsSource, XBindingPath = "XValue", YBindingPath = "YValue" });
+			((SfChart)RangeNavigator.Content).Series.Clear();
+			((SfChart)RangeNavigator.Content).Series.Add(new SplineAreaSeries() { ItemsSource = series.ItemsSource, XBindingPath = "XValue", YBindingPath = "YValue" });
 
 			if (Device.OS == TargetPlatform.Android)
 			{
