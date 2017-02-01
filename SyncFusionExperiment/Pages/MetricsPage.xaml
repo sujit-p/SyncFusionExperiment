@@ -5,11 +5,6 @@
 
 			<!--The Main Above Chart-->
 			<chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-
-				<!--I don't want to use the binding context here because 1) The main chart works fine without it 2) it calls the MetricsPageModel constructor again-->
-				<!--<chart:SfChart.BindingContext>
-					<pageModels:MetricsPageModel />
-				</chart:SfChart.BindingContext>-->
 				<chart:SfChart.PrimaryAxis>
 					<chart:DateTimeAxis x:Name="dateTimeAxis" Minimum="5/1/2015" Maximum="8/1/2015">
 						<chart:DateTimeAxis.LabelStyle>
@@ -28,7 +23,7 @@
 			<!--Bottom Range Navigator-->
 			<rangenavigator:SfDateTimeRangeNavigator x:Name="RangeNavigator" RangeChanged="nac_RangeChanged" HorizontalOptions="FillAndExpand" ViewRangeStart="5/1/2015" ViewRangeEnd="8/1/2015" ItemsSource="{Binding DateTimeRangeData}" XBindingPath="XValue" YBindingPath="YValue" HeightRequest="200">
 			<!--Embedded Chart inside Range Navigator-->
-<!--				<rangenavigator:SfDateTimeRangeNavigator.Content>
+				<rangenavigator:SfDateTimeRangeNavigator.Content>
 					<chart:SfChart HeightRequest="40">
 						<chart:SfChart.PrimaryAxis>
 							<chart:DateTimeAxis x:Name="dateTimeAxisRangeNavigator" Minimum="5/1/2015" Maximum="8/1/2015">
@@ -45,7 +40,7 @@
 						</chart:SfChart.Series>
 					</chart:SfChart>
 				</rangenavigator:SfDateTimeRangeNavigator.Content>
--->			</rangenavigator:SfDateTimeRangeNavigator>
+			</rangenavigator:SfDateTimeRangeNavigator>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
