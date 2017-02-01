@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using FreshMvvm;
+using Xamarin.Forms;
 
 namespace SyncFusionExperiment
 {
@@ -8,7 +9,9 @@ namespace SyncFusionExperiment
 		{
 			InitializeComponent();
 
-			MainPage = new SyncFusionExperimentPage();
+			var page = FreshPageModelResolver.ResolvePageModel<MainPageModel>();
+			var basicNavContainer = new FreshNavigationContainer(page);
+			MainPage = basicNavContainer;
 		}
 
 		protected override void OnStart()
