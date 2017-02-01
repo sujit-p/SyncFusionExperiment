@@ -81,6 +81,15 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.3.180\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.SfChart.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.14.4.0.20\lib\MonoAndroid10\Syncfusion.SfChart.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.14.4.0.20\lib\MonoAndroid10\Syncfusion.SfChart.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.14.4.0.20\lib\MonoAndroid10\Syncfusion.SfChart.XForms.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SyncFusionExperiment\SyncFusionExperiment.csproj">

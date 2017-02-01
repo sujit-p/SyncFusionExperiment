@@ -101,6 +101,15 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.3.180\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.SfChart.iOS">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.14.4.0.20\lib\Xamarin.iOS10\Syncfusion.SfChart.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.14.4.0.20\lib\Xamarin.iOS10\Syncfusion.SfChart.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms.iOS">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.14.4.0.20\lib\Xamarin.iOS10\Syncfusion.SfChart.XForms.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SyncFusionExperiment\SyncFusionExperiment.csproj">
