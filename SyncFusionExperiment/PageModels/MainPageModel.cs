@@ -3,7 +3,7 @@ using FreshMvvm;
 using PropertyChanged;
 using Xamarin.Forms;
 
-namespace SyncFusionExperiment
+namespace SyncFusionExperiment.PageModels
 {
 	[ImplementPropertyChanged]
 	public class MainPageModel : FreshBasePageModel
@@ -15,9 +15,7 @@ namespace SyncFusionExperiment
 		{
 			get
 			{
-
 				return new Command(async () => { await CoreMethods.PushPageModel<MetricsPageModel>(); });
-
 			}
 		}
 	}

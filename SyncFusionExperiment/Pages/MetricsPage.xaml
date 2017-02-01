@@ -1,6 +1,51 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SyncFusionExperiment.MetricsPage" Title = "Metrics Page">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:rangenavigator="clr-namespace:Syncfusion.RangeNavigator.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:pageModels="clr-namespace:SyncFusionExperiment.PageModels;assembly=SyncFusionExperiment" x:Class="SyncFusionExperiment.Pages.MetricsPage" Title="Metrics Page">
 	<ContentPage.Content>
-		
+		<StackLayout>
+
+			<!--The Main Above Chart-->
+			<chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+				<!--I don't want to use the binding context here because 1) The main chart works fine without it 2) it calls the MetricsPageModel constructor again-->
+				<!--<chart:SfChart.BindingContext>
+					<pageModels:MetricsPageModel />
+				</chart:SfChart.BindingContext>-->
+				<chart:SfChart.PrimaryAxis>
+					<chart:DateTimeAxis x:Name="dateTimeAxis" Minimum="5/1/2015" Maximum="8/1/2015">
+						<chart:DateTimeAxis.LabelStyle>
+							<chart:ChartAxisLabelStyle LabelFormat="MMM/dd" />
+						</chart:DateTimeAxis.LabelStyle>
+					</chart:DateTimeAxis>
+				</chart:SfChart.PrimaryAxis>
+				<chart:SfChart.SecondaryAxis>
+					<chart:NumericalAxis />
+				</chart:SfChart.SecondaryAxis>
+				<chart:SfChart.Series>
+					<chart:SplineAreaSeries x:Name="series" ItemsSource="{Binding DateTimeRangeData}" XBindingPath="XValue" YBindingPath="YValue" Color ="Red"/>
+				</chart:SfChart.Series>
+			</chart:SfChart>
+			
+			<!--Bottom Range Navigator-->
+			<rangenavigator:SfDateTimeRangeNavigator x:Name="RangeNavigator" RangeChanged="nac_RangeChanged" HorizontalOptions="FillAndExpand" ViewRangeStart="5/1/2015" ViewRangeEnd="8/1/2015" ItemsSource="{Binding DateTimeRangeData}" XBindingPath="XValue" YBindingPath="YValue" HeightRequest="200">
+			<!--Embedded Chart inside Range Navigator-->
+<!--				<rangenavigator:SfDateTimeRangeNavigator.Content>
+					<chart:SfChart HeightRequest="40">
+						<chart:SfChart.PrimaryAxis>
+							<chart:DateTimeAxis x:Name="dateTimeAxisRangeNavigator" Minimum="5/1/2015" Maximum="8/1/2015">
+								<chart:DateTimeAxis.LabelStyle>
+									<chart:ChartAxisLabelStyle LabelFormat="MMM/dd" />
+								</chart:DateTimeAxis.LabelStyle>
+							</chart:DateTimeAxis>
+						</chart:SfChart.PrimaryAxis>
+						<chart:SfChart.SecondaryAxis>
+							<chart:NumericalAxis Minimum ="0" Maximum = "100" />
+						</chart:SfChart.SecondaryAxis>
+						<chart:SfChart.Series>
+							<chart:SplineAreaSeries x:Name="seriesRangeNavigator" ItemsSource="{Binding DateTimeRangeData}" XBindingPath="XValue" YBindingPath="YValue" Color ="Red" />
+						</chart:SfChart.Series>
+					</chart:SfChart>
+				</rangenavigator:SfDateTimeRangeNavigator.Content>
+-->			</rangenavigator:SfDateTimeRangeNavigator>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

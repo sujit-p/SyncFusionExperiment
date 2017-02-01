@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace SyncFusionExperiment
+namespace SyncFusionExperiment.Pages
 {
 	public partial class MainPage : ContentPage
 	{

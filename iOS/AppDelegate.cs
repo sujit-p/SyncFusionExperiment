@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Syncfusion.SfChart.XForms.iOS.Renderers;
 using UIKit;
 
 namespace SyncFusionExperiment.iOS
@@ -13,6 +14,8 @@ namespace SyncFusionExperiment.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init();
+
+			new SfChartRenderer();
 
 			LoadApplication(new App());
 

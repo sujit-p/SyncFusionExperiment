@@ -1,4 +1,5 @@
 ﻿using FreshMvvm;
+using SyncFusionExperiment.PageModels;
 using Xamarin.Forms;
 
 namespace SyncFusionExperiment
